@@ -22,7 +22,7 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
       }, 30000)
     })
     conn.once('connection-validated', user => {
-      global.conn.reply(m.chat, 'Berhasil tersambung dengan WhatsApp Anda.\n*NOTE: kalo bot aku mati, bot kamu juga.*\n' + JSON.stringify(user, null, 2), m)
+      global.conn.reply(m.chat, 'Berhasil tersambung dengan WhatsApp Anda.\n*User Info*\n' + JSON.stringify(user, null, 2), m)
     })
     conn.on('message-new', global.conn.handler)
     conn.regenerateQRIntervalMs = null
@@ -43,7 +43,7 @@ handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
-handler.private = false
+handler.private = true
 
 handler.admin = false
 handler.botAdmin = false
