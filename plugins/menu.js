@@ -39,6 +39,7 @@ Exp : ${exp}
 Time : ${time}
 Day : ${week}
 Date : ${date}
+Weton : ${weton}
 
 Fitur masih dikit. Kan gw noob:v
 
@@ -101,6 +102,7 @@ ${_p}deletechat (chat grup)
 ${_p}deletechat group
 ${_p}mutechat (chat grup)
 ${_p}mutechat group
+> 
 
 [CREATED BY ADIIXYZ]
 `.trim()
