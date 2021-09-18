@@ -1,36 +1,37 @@
-# NfQ-BoT
+#    「 ADIIXYZBOT 」
 Simple WhatsApp Bot
 
-### FOR TERMUX USER
-```bash
-> pkg update && pkg upgrade
-> pkg install git
-> pkg install nodejs
-> pkg install ffmpeg
-> pkg install imagemagick
-> git clone https://github.com/Arya274/Arya-Bot
-> cd Arya-Bot
-> npm install
-```
-###### Run
-```bash
-> node . [<session name>] (session name is optional)
+# INSTALL
+
+## FOR TERMUX/VPS USERS
+```cmd
+apt update && apt upgrade
+apt install git
+apt install nodejs
+apt install ffmpeg
+apt install imagemagick
+git clone https://github.com/Adiixyz/simple-botwa
+cd simple-botwa
+npm install
 ```
 
+###### Run
+```cmd
+node adiixyz.js
+```
 ---------
 
-### FOR WINDOWS/VPS/RDP USER
-```bash
-> git clone https://github.com/Arya274/Arya-Bot
-> cd Arya-Bot
-> npm install
+### FOR WINDOWS/RDP USER
+- install git
+- install nodejs
+- install Ffmpeg
+- install imagemagick
+```cmd
+git clone https://github.com/Adiixyz/simple-botwa
+cd simple-botwa
+npm install
 ```
-###### Run
+#### Run
 ```bash
-> node index.js
+node adiixyz.js
 ```
- SOSMED:
- 
- Instagram: @arpunchs
- 
- Youtube: Drawl Nag
