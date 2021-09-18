@@ -14,7 +14,7 @@ global.timestamp = {
 }
 
 let opts = yargs(process.argv.slice(2)).exitProcess(false).parse()
-global.prefix = new RegExp('^[' + (opts['prefix'] || '\\/i!#$%\\-+£¢€¥^°=¶∆×÷π√✓©®:;?&.') + ']')
+global.prefix = new RegExp('^[' + (opts['prefix'] || 'z#.') + ']')
 
 global.DATABASE = new (require('./lib/database'))(opts._[0] ? opts._[0] + '_' : '' + 'database.json', null, 2)
 if (!global.DATABASE.data.users) global.DATABASE.data = {
@@ -22,7 +22,7 @@ if (!global.DATABASE.data.users) global.DATABASE.data = {
   groups: {}
 }
 
-let authFile = `${opts._[0] || 'session'}.data.json`
+let authFile = `${opts._[0] || 'adiixyz'}.json`
 fs.existsSync(authFile) && conn.loadAuthInfo(authFile)
 opts['big-qr'] && conn.on('qr', qr => generate(qr, { small: false }))
 conn.on('credentials-updated', () => fs.writeFileSync(authFile, JSON.stringify(conn.base64EncodedAuthInfo())))
@@ -124,13 +124,13 @@ global.prems = []
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    owner: 'Perintah ini hanya dapat digunakan oleh Owner Nomor!',
-    mods: 'Perintah ini hanya dapat digunakan oleh Moderator!',
-    premium: 'Perintah ini hanya untuk member Premium!',
-    group: 'Perintah ini hanya dapat digunakan di Grup!',
-    private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-    admin: 'Perintah ini hanya untuk admin grup!',
-    botAdmin: 'Jadikan bot sebagai admin untuk menggunakan perintah ini!'
+    owner: 'Owner only',
+    mods: 'Moderator only',
+    premium: 'Premium only',
+    group: 'Group only',
+    private: 'Private chat only',
+    admin: 'Admin group only',
+    botAdmin: 'gimme admin before use this command'
   }[type]
   msg && conn.reply(m.chat, msg, m)
 }
